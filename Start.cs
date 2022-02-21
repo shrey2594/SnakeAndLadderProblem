@@ -10,7 +10,8 @@ namespace SnakeAndLadderProblem
     {
         public static void StartProblem()
         {
-            int start=0; ;
+            int start=0;
+            RollDice.Roll();
         }
     }
 }
