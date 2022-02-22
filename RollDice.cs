@@ -12,7 +12,7 @@ namespace SnakeAndLadderProblem
         {
             int current = start;
             Random r = new Random();
-            while (current <= 100)
+            while (current < 100)
             {
                 int dice = r.Next(1, 7);
                 int option = CheckOption.Options(dice);
@@ -20,6 +20,10 @@ namespace SnakeAndLadderProblem
                 if (current<0)
                 {
                     current=0;
+                }
+                if(current>100)
+                {
+                    current -= option;
                 }
             }
             Console.WriteLine(current);
