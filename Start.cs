@@ -8,10 +8,13 @@ namespace SnakeAndLadderProblem
 {
     public class Start
     {
+        /// <summary>
+        /// Starts the problem.
+        /// </summary>
         public static void StartProblem()
         {
             int start=0;
-            RollDice.Roll(start);
+            MultiplePlayer.Players(start);
         }
     }
 }
