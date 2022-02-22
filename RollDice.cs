@@ -6,30 +6,31 @@ using System.Threading.Tasks;
 
 namespace SnakeAndLadderProblem
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class RollDice
     {
-        public static void Roll(int start)
+        /// <summary>
+        /// Roll the dice class.
+        /// </summary>
+        /// <param name="start">The start.</param>
+        public static int Roll(int start)
         {
             int current = start;
-            int count=0;
             Random r = new Random();
-            while (current < 100)
+            int dice = r.Next(1, 7);
+            int option = CheckOption.Options(dice);
+            current+=option;
+            if (current<0)
             {
-                int dice = r.Next(1, 7);
-                int option = CheckOption.Options(dice);
-                current+=option;
-                if (current<0)
-                {
-                    current=0;
-                }
-                if(current>100)
-                {
-                    current -= option;
-                }
-                count++;
-                Console.WriteLine("The player is currently at position "+current);
+                current=0;
             }
-            Console.WriteLine("The player took "+count+" rolls to win.");
+            if(current>100)
+            {
+                current -= option;
+            }
+            return current;
         }
     }
 }
