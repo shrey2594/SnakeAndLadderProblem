@@ -11,6 +11,7 @@ namespace SnakeAndLadderProblem
         public static void Roll(int start)
         {
             int current = start;
+            int count=0;
             Random r = new Random();
             while (current < 100)
             {
@@ -25,8 +26,10 @@ namespace SnakeAndLadderProblem
                 {
                     current -= option;
                 }
+                count++;
+                Console.WriteLine("The player is currently at position "+current);
             }
-            Console.WriteLine(current);
+            Console.WriteLine("The player took "+count+" rolls to win.");
         }
     }
 }
