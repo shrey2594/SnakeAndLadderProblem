@@ -12,22 +12,17 @@ namespace SnakeAndLadderProblem
         {
             int current = start;
             Random r = new Random();
-            int dice=r.Next(1,7);
-            Console.WriteLine(dice);
-            int option = CheckOption.Options();
-            Console.WriteLine(option);
-            if(option==1)
+            while (current <= 100)
             {
-                Console.WriteLine("currently player is at:" + (current+dice));
+                int dice = r.Next(1, 7);
+                int option = CheckOption.Options(dice);
+                current+=option;
+                if (current<0)
+                {
+                    current=0;
+                }
             }
-            else if(option==2)
-            {
-                Console.WriteLine("Currently player is at:" + (current-dice)); ;
-            }
-            else
-            {
-                Console.WriteLine("Currently player is at:" + current);
-            }
+            Console.WriteLine(current);
         }
     }
 }
